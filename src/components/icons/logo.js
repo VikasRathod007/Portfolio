@@ -13,7 +13,6 @@ const IconLogo = () => (
           strokeLinejoin="round"
           points="39 0 0 22 0 67 39 90 78 68 78 23"
         />
-        {/* Changed path to draw a 'V' instead of 'B' */}
         <path
           d="M28,30 L39,61 L50,30"
           stroke="currentColor"

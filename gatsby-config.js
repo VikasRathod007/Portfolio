@@ -5,7 +5,7 @@ module.exports = {
     title: 'Vikash Rathod',
     description:
       'Vikash Rathod is a full stack developer who specializes in building exceptional digital experiences.',
-    siteUrl: 'https://vikashrathod.com', // No trailing slash allowed!
+    siteUrl: 'https://vikashrathod.me', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@vikashrathod',
   },
@@ -42,6 +42,13 @@ module.exports = {
       options: {
         name: 'content',
         path: `${__dirname}/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
     {
@@ -142,11 +149,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-45666519-2',
-      },
-    },
+    // Removed Google Analytics for now - add back later if needed
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: 'UA-45666519-2',
+    //   },
+    // },
   ],
 };
