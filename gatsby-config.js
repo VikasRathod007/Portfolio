@@ -17,19 +17,22 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Vikash Rathod',
-        short_name: 'Vikash Rathod',
-        start_url: '/',
-        background_color: config.colors.darkNavy,
-        theme_color: config.colors.navy,
-        display: 'minimal-ui',
-        icon: 'src/images/favicons/android-icon-192x192.png',
-      },
-    },
-    `gatsby-plugin-offline`,
+    // Temporarily disabled gatsby-plugin-manifest due to image format issues
+    // Will re-enable after deployment is working
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: 'Vikash Rathod',
+    //     short_name: 'Vikash Rathod',
+    //     start_url: '/',
+    //     background_color: config.colors.darkNavy,
+    //     theme_color: config.colors.navy,
+    //     display: 'minimal-ui',
+    //     icon: 'src/images/favicons/android-icon-192x192.png',
+    //   },
+    // },
+    // Temporarily disabled gatsby-plugin-offline (depends on manifest)
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
