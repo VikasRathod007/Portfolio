@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import mongodbBadge from '../../images/mongodb-associate-dba-badge.png';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
@@ -201,6 +202,32 @@ const Certifications = () => {
             </svg>
           </div>
         );
+      case 'MongoDB':
+        return (
+          <div
+            className="certification-icon mongodb"
+            style={{
+              backgroundColor: '#fff',
+              border: '2px solid #13aa52',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              overflow: 'hidden',
+            }}>
+            <img
+              src={mongodbBadge}
+              alt="MongoDB Associate DBA Badge"
+              style={{
+                width: '100%',
+                height: '100%',
+                maxWidth: '60px',
+                maxHeight: '60px',
+                objectFit: 'contain',
+                borderRadius: '50%',
+              }}
+            />
+          </div>
+        );
       case 'sql':
         return (
           <div className={`certification-icon ${iconType}`}>
@@ -267,6 +294,16 @@ const Certifications = () => {
       tech: ['Git', 'GitHub', 'Version Control', 'Collaboration'],
       url: 'https://www.credly.com/badges/34a85be2-7a56-4816-9493-163a9314948f/public_url',
       icon: 'github',
+    },
+    {
+      title: 'MongoDB Associate Database Administrator',
+      issuer: 'MongoDB',
+      date: 'July 2025',
+      description:
+        'Demonstrates fundamental knowledge of MongoDB, including data modeling, query optimization, and performance tuning. Covers key concepts in NoSQL databases and their applications.',
+      tech: ['MongoDB', 'NoSQL', 'Database Administration', 'Data Modeling'],
+      url: 'https://www.credly.com/badges/832de109-4f81-450f-9553-3734fb0a41fc/public_url',
+      icon: 'MongoDB',
     },
     {
       title: 'SQL (Intermediate)',
