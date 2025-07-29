@@ -275,6 +275,14 @@ const Jobs = () => {
               const { frontmatter, html } = node;
               const { title, url, company, range } = frontmatter;
 
+              // Only show company name if it exists and is not empty
+              // Only show company name if it exists, is not empty, and is not 'Self Employed' for freelance
+              const isFreelance = title && title.toLowerCase().includes('freelance');
+              const showCompany =
+                company &&
+                company.trim() !== '' &&
+                !(isFreelance && company.trim().toLowerCase() === 'self employed');
+
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
                   <StyledTabPanel
@@ -286,12 +294,14 @@ const Jobs = () => {
                     hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url} className="inline-link">
-                          {company}
-                        </a>
-                      </span>
+                      {showCompany && (
+                        <span className="company">
+                          &nbsp;@&nbsp;
+                          <a href={url} className="inline-link">
+                            {company}
+                          </a>
+                        </span>
+                      )}
                     </h3>
 
                     <p className="range">{range}</p>
