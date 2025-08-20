@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Development cache
+.cache/
+
+# Environment variables
+.env*
+
+# Environment variables
+.env*
+
+# Git
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Other
+README.md
+*.md

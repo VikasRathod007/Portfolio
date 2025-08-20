@@ -1,0 +1,10 @@
+services:
+  # Production service - serves pre-built static files
+  portfolio:
+    build: .
+    ports:
+      - "9090:80"
+    container_name: portfolio-app
+    restart: unless-stopped
+    labels:
+      - "description=Vikash Rathod Portfolio - Production"
