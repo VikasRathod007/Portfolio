@@ -283,7 +283,6 @@ const Certifications = () => {
     }
   };
 
-  // Placeholder data - will be replaced with actual certification data
   const certifications = [
     {
       title: 'GitHub Foundations',
@@ -308,10 +307,9 @@ const Certifications = () => {
     {
       title: 'SQL (Intermediate)',
       issuer: 'HackerRank',
-      date: 'Certified',
       description:
-        'Demonstrates advanced SQL skills including complex joins, subqueries, window functions, and advanced data manipulation techniques. Covers intermediate database concepts and performance optimization.',
-      tech: ['SQL', 'Database', 'Advanced Queries', 'Data Analysis'],
+        'Demonstrates intermediate SQL skills, including complex joins, unions, and subqueries for querying and combining data across relational tables.',
+      tech: ['SQL', 'Joins', 'Subqueries', 'Relational Databases'],
       url: 'https://www.hackerrank.com/certificates/iframe/7b7b276849a8',
       icon: 'sql',
     },
@@ -379,7 +377,9 @@ const Certifications = () => {
 
                 <p className="certification-description">{certification.description}</p>
 
-                <div className="certification-date">{certification.date}</div>
+                {certification.date && (
+                  <div className="certification-date">{certification.date}</div>
+                )}
 
                 {certification.tech && (
                   <ul className="certification-tech-list">

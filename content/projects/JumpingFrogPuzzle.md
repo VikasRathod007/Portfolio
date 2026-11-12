@@ -5,9 +5,6 @@ github: 'https://github.com/VikasRathod007/Jumping-frog-puzzle'
 external: ''
 tech:
   - Python
-  - Algorithm Design
-  - Mathematical Logic
-  - Problem Solving
 showInProjects: true
 ---
 

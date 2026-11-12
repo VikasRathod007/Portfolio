@@ -162,6 +162,13 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
+
+  h4 {
+    margin: 30px 0 2px;
+    font-size: var(--fz-xl);
+    font-weight: 500;
+    line-height: 1.3;
+  }
 `;
 
 const Jobs = () => {
@@ -275,13 +282,12 @@ const Jobs = () => {
               const { frontmatter, html } = node;
               const { title, url, company, range } = frontmatter;
 
-              // Only show company name if it exists and is not empty
-              // Only show company name if it exists, is not empty, and is not 'Self Employed' for freelance
+              // Only show company name if it exists, is not empty, and is not 'Self-Employed' for freelance
               const isFreelance = title && title.toLowerCase().includes('freelance');
               const showCompany =
                 company &&
                 company.trim() !== '' &&
-                !(isFreelance && company.trim().toLowerCase() === 'self employed');
+                !(isFreelance && company.trim().toLowerCase() === 'self-employed');
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">

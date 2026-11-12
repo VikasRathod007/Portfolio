@@ -1,5 +1,5 @@
 ---
-date: '2024-12-01'
+date: '2025-06-01'
 title: 'SkinnCube - Beauty & Skincare Platform'
 github: ''
 external: 'https://skinncube.com/'
@@ -8,7 +8,6 @@ tech:
   - React
   - Next.js
   - Node.js
-  - Full Stack Development
 showInProjects: true
 ---
 

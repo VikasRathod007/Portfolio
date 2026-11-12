@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
+import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -65,18 +66,14 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a Software Developer specializing in building exceptional digital experiences. I have
-        experience developing web applications using React, Node.js, and PostgreSQL, with a passion
-        for creating innovative solutions that solve real-world problems.
+        I&apos;m a full-stack developer at Octalogic Tech, building web and mobile products for TKO
+        Group (UFC). I work mostly with Python/Django and Node.js, and I&apos;m open to roles
+        anywhere in India or remote.
       </p>
     </>
   );
   const five = (
-    <a
-      className="email-link"
-      href="mailto:vikeyrathod007@gmail.com"
-      target="_blank"
-      rel="noreferrer">
+    <a className="email-link" href={`mailto:${email}`} target="_blank" rel="noreferrer">
       Get In Touch
     </a>
   );

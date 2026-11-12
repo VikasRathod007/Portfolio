@@ -128,18 +128,18 @@ const About = () => {
   }, []);
 
   const skills = [
-    'JavaScript (ES6+)',
     'Python',
-    'React',
+    'Django',
+    'JavaScript (ES6+)',
+    'TypeScript',
     'Node.js',
+    'React',
     'Next.js',
-    'Flutter',
+    'HTMX & Alpine.js',
+    'MySQL',
     'PostgreSQL',
     'MongoDB',
-    'Django',
-    'Express.js',
     'Docker',
-    'Git',
   ];
 
   return (
@@ -150,29 +150,38 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Vikash and I enjoy creating things that live on the internet. I am
-              passionate about building digital solutions that solve real-world problems.
+              Hi! I&apos;m Vikash, a full-stack developer based in Pune who likes building software
+              that people rely on every day.
             </p>
 
             <p>
-              I had the privilege of working as a Full Stack Developer at{' '}
+              In February 2026, I rejoined{' '}
               <a href="https://octalogic.in/" target="_blank" rel="noreferrer">
                 Octalogic Tech
-              </a>{' '}
-              until February 2025, where I developed web applications for various clients and
-              contributed to mobile applications using Flutter.
+              </a>
+              , where I had interned before. I build web and mobile products for TKO Group (UFC),
+              including UFC War Room and a real-time scoring system used at live UFC BJJ events. I
+              manage projects independently from planning to launch and review my teammates&apos;
+              pull requests.
             </p>
 
             <p>
-              I also completed a Software Developer Internship at{' '}
+              I also freelance for businesses like{' '}
+              <a href="https://ngjewels.com/" target="_blank" rel="noreferrer">
+                NG Jewels
+              </a>{' '}
+              and{' '}
+              <a href="https://skinncube.com/" target="_blank" rel="noreferrer">
+                SkinnCube
+              </a>
+              , and I interned at{' '}
               <a href="https://unirisefoundation.org/" target="_blank" rel="noreferrer">
                 Unirise Research Foundation
-              </a>{' '}
-              where I developed a chatbot that reads and interprets PDF documents using AI
-              technologies.
+              </a>
+              , where I built an LLM-powered chatbot that answers questions from PDF documents.
             </p>
 
-            <p>Here are a few technologies I have been working with recently:</p>
+            <p>Here are a few technologies I&apos;ve been working with recently:</p>
           </div>
 
           <ul className="skills-list">
@@ -184,7 +193,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/Me.jpeg"
+              src="../../images/Me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}

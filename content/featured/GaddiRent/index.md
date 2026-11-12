@@ -3,7 +3,7 @@ date: '2024-03-20'
 title: 'GaddiRent - Vehicle Rental'
 cover: './GaddiRent.png'
 github: 'https://github.com/VikasRathod007/Octalogic-Tech'
-external: '#'
+external: ''
 tech:
   - React.js
   - NestJS

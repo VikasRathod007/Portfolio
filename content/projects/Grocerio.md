@@ -2,7 +2,7 @@
 date: '2024-01-01'
 title: 'Grocerio - Grocery E-commerce Platform'
 github: 'https://github.com/VikasRathod007/grocerio'
-external: '#'
+external: ''
 tech:
   - JavaScript
   - React

@@ -4,10 +4,9 @@ module.exports = {
   siteMetadata: {
     title: 'Vikash Rathod',
     description:
-      'Vikash Rathod is a full stack developer who specializes in building exceptional digital experiences.',
-    siteUrl: 'https://vikashrathod.me', // No trailing slash allowed!
+      'Vikash Rathod is a full-stack developer (Python/Django, Node.js) building web and mobile products for TKO Group (UFC) at Octalogic Tech.',
+    siteUrl: 'https://vikashrathod.tech', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@vikashrathod',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

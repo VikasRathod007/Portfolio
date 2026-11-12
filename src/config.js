@@ -1,5 +1,5 @@
 module.exports = {
-  email: 'vikeyrathod007@gmail.com',
+  email: 'vikashrathod.dev@gmail.com',
 
   socialMedia: [
     {
@@ -13,6 +13,10 @@ module.exports = {
     {
       name: 'LeetCode',
       url: 'https://leetcode.com/u/VikashRathod/',
+    },
+    {
+      name: 'WhatsApp',
+      url: 'https://wa.me/919359753816',
     },
   ],
 

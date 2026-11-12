@@ -11,6 +11,7 @@ import {
   IconLoader,
   IconLogo,
   IconStar,
+  IconWhatsApp,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -35,6 +36,8 @@ const Icon = ({ name }) => {
       return <IconLogo />;
     case 'Star':
       return <IconStar />;
+    case 'WhatsApp':
+      return <IconWhatsApp />;
     default:
       return <IconExternal />;
   }

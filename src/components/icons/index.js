@@ -10,3 +10,4 @@ export { default as IconLinkedin } from './linkedin';
 export { default as IconLoader } from './loader';
 export { default as IconLogo } from './logo';
 export { default as IconStar } from './star';
+export { default as IconWhatsApp } from './whatsapp';
