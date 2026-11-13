@@ -5,6 +5,13 @@ company: 'Self-Employed'
 location: 'Remote'
 range: 'Jun 2025 – Present'
 url: ''
+tech:
+  - JavaScript
+  - TypeScript
+  - React
+  - Next.js
+  - Node.js
+  - DigitalOcean
 ---
 
 - Build and launch production websites for businesses end to end, from requirements to deployment, including [NG Jewels](https://ngjewels.com/) and [SkinnCube](https://skinncube.com/)

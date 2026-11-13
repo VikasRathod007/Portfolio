@@ -1,5 +1,6 @@
 ---
 date: '2024-03-20'
+order: 2
 title: 'GaddiRent - Vehicle Rental'
 cover: './GaddiRent.png'
 github: 'https://github.com/VikasRathod007/Octalogic-Tech'
@@ -15,3 +16,5 @@ showInProjects: true
 ---
 
 A modern vehicle rental platform with multi-step booking process and dynamic form validation. Built with React and NestJS, featuring vehicle categorization, TypeORM database management, and responsive design.
+
+**Key challenge:** keeping a multi-step booking form valid at every step, with vehicle categories modelled in PostgreSQL through TypeORM.

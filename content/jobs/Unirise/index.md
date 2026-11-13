@@ -5,6 +5,14 @@ company: 'Unirise Research Foundation'
 location: 'Colva, Goa'
 range: 'May 2024 – Aug 2024'
 url: 'https://unirisefoundation.org/'
+tech:
+  - Python
+  - Django
+  - React
+  - MongoDB
+  - Pinecone
+  - LLMs
+  - Docker
 ---
 
 - Built an LLM-powered chatbot that reads PDF documents and answers questions from their content, with a Python/Django REST API and a React front end

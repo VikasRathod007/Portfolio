@@ -19,34 +19,7 @@ const StyledAboutSection = styled.section`
   }
 `;
 
-const StyledText = styled.div`
-  ul.skills-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    grid-gap: 0 10px;
-    padding: 0;
-    margin: 20px 0 0 0;
-    overflow: hidden;
-    list-style: none;
-
-    li {
-      position: relative;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      font-family: var(--font-mono);
-      font-size: var(--fz-xs);
-
-      &:before {
-        content: '▹';
-        position: absolute;
-        left: 0;
-        color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
-      }
-    }
-  }
-`;
+const StyledText = styled.div``;
 
 const StyledPic = styled.div`
   position: relative;
@@ -63,7 +36,6 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
 
     &:hover,
     &:focus {
@@ -73,22 +45,13 @@ const StyledPic = styled.div`
       &:after {
         transform: translate(8px, 8px);
       }
-
-      .img {
-        filter: none;
-        mix-blend-mode: normal;
-      }
     }
 
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
-      transition: var(--transition);
     }
 
-    &:before,
     &:after {
       content: '';
       display: block;
@@ -97,16 +60,6 @@ const StyledPic = styled.div`
       height: 100%;
       border-radius: var(--border-radius);
       transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--navy);
-      mix-blend-mode: screen;
-    }
-
-    &:after {
       border: 2px solid var(--green);
       top: 14px;
       left: 14px;
@@ -126,21 +79,6 @@ const About = () => {
 
     sr.reveal(revealContainer.current, srConfig());
   }, []);
-
-  const skills = [
-    'Python',
-    'Django',
-    'JavaScript (ES6+)',
-    'TypeScript',
-    'Node.js',
-    'React',
-    'Next.js',
-    'HTMX & Alpine.js',
-    'MySQL',
-    'PostgreSQL',
-    'MongoDB',
-    'Docker',
-  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -180,13 +118,7 @@ const About = () => {
               </a>
               , where I built an LLM-powered chatbot that answers questions from PDF documents.
             </p>
-
-            <p>Here are a few technologies I&apos;ve been working with recently:</p>
           </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
         </StyledText>
 
         <StyledPic>

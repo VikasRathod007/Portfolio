@@ -4,18 +4,18 @@
 
 import { useState, useEffect } from 'react';
 const QUERY = '(prefers-reduced-motion: no-preference)';
-const isRenderingOnServer = typeof window === 'undefined';
 
-const getInitialState = () =>
-  // For our initial server render, we won't know if the user
-  // prefers reduced motion, but it doesn't matter. This value
-  // will be overwritten on the client, before any animations
-  // occur.
-  isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
 function usePrefersReducedMotion() {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(getInitialState);
+  // Start with the same value on the server and on the client's first render. The page is
+  // pre-rendered with this component tree, so a different first value in the browser makes React
+  // hydrate against mismatched HTML (which broke the nav's styles). The real preference is read
+  // right after mount; ScrollReveal is disabled separately for reduced-motion users (utils/sr.js).
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
   useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
+    setPrefersReducedMotion(!mediaQueryList.matches);
+
     const listener = event => {
       setPrefersReducedMotion(!event.matches);
     };
@@ -24,6 +24,7 @@ function usePrefersReducedMotion() {
       mediaQueryList.removeListener(listener);
     };
   }, []);
+
   return prefersReducedMotion;
 }
 

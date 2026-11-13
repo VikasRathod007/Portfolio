@@ -86,11 +86,17 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
-    padding: 0 15px;
+    flex-shrink: 0;
+    width: var(--tab-width);
+    min-width: var(--tab-width);
+    height: auto;
+    min-height: var(--tab-height);
+    padding: 6px 10px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
+    line-height: 1.3;
     text-align: center;
+    white-space: normal;
   }
 
   &:hover,
@@ -169,6 +175,28 @@ const StyledTabPanel = styled.div`
     font-weight: 500;
     line-height: 1.3;
   }
+
+  ul.job-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -10px 0 25px;
+    font-size: var(--fz-xxs);
+
+    li {
+      margin: 0;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background-color: var(--green-tint);
+      color: var(--green);
+      font-family: var(--font-mono);
+      line-height: 1.4;
+
+      &:before {
+        content: none;
+      }
+    }
+  }
 `;
 
 const Jobs = () => {
@@ -186,6 +214,7 @@ const Jobs = () => {
               location
               range
               url
+              tech
             }
             html
           }
@@ -280,7 +309,7 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+              const { title, url, company, range, tech } = frontmatter;
 
               // Only show company name if it exists, is not empty, and is not 'Self-Employed' for freelance
               const isFreelance = title && title.toLowerCase().includes('freelance');
@@ -311,6 +340,14 @@ const Jobs = () => {
                     </h3>
 
                     <p className="range">{range}</p>
+
+                    {tech && tech.length > 0 && (
+                      <ul className="job-tech">
+                        {tech.map(item => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
 
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>

@@ -9,19 +9,15 @@ const StyledCertificationsSection = styled.section`
   flex-direction: column;
   align-items: center;
 
-  h2 {
-    font-size: clamp(24px, 5vw, var(--fz-heading));
-  }
-
   .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
     position: relative;
-    margin-top: 50px;
+    width: 100%;
 
-    @media (max-width: 1080px) {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -328,7 +324,9 @@ const Certifications = () => {
 
   return (
     <StyledCertificationsSection id="certifications">
-      <h2 ref={revealTitle}>Certifications</h2>
+      <h2 className="numbered-heading" ref={revealTitle}>
+        Certifications
+      </h2>
 
       <div className="certifications-grid">
         {certifications &&

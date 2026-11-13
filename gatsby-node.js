@@ -6,6 +6,46 @@
 
 const path = require('path');
 
+// One page per published blog post in content/posts (posts with `draft: true` are skipped)
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions;
+  const postTemplate = path.resolve('src/templates/post.js');
+
+  const result = await graphql(`
+    {
+      postsRemark: allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/content/posts/" }
+          frontmatter: { draft: { ne: true } }
+        }
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query for blog posts.');
+    return;
+  }
+
+  result.data.postsRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: postTemplate,
+      context: {},
+    });
+  });
+};
+
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
